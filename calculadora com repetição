@@ -1,0 +1,34 @@
+inicio = str (input('Vamos começar? (S/N)'))
+while inicio != 'N':
+    
+    print('Digite o primeiro número da equação:')
+    valor1 = float (input())
+    print('Digite o segundo número da equação:')
+    valor2 = float (input())
+
+    print('Operação desejada:')
+    print('+ - / *')
+    print('Qual a operação que será realizada?:')
+    equacao = input()
+    while(equacao != '+' and equacao != '-' and equacao != '/' and equacao != '*'):
+        print('\nOperação inválida.')
+        print('+ - / *')
+        equacao = input()
+
+    while(equacao=='/' and valor2==0):
+        print('\nEquação inválida.')
+        valor2 = float (input())
+
+    resultado = 0.0
+    if (equacao == '+'):
+        resultado = valor1 + valor2
+    elif (equacao == '-'):
+        resultado = valor1 - valor2
+    elif (equacao == '/'):
+        resultado = valor1 / valor2
+    elif (equacao == '*'):
+        resultado = valor1 * valor2
+
+    print('\n' + str(valor1) + str(equacao) + str(valor2) + ' = ' + str(resultado))
+
+    inicio = str (input('Deseja Continuar? (S/N)'))
